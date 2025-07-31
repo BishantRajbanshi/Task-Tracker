@@ -146,7 +146,17 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    
+    <div className="min-h-screen bg-gray-50"
+      // className="min-h-screen flex items-center justify-center px-4"
+      style={{
+        backgroundImage: 'url(/background.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+    
       {/* Header */}
       <div className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -227,8 +237,8 @@ const Dashboard = () => {
                     onChange={(e) => handleStatusChange(task.id, e.target.value)}
                     className="px-2 py-1 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
                   >
-                    <option value="todo">To Do</option>
-                    <option value="in-progress">In Progress</option>
+                    <option value="pending">To Do</option>
+                    <option value="in_progress">In Progress</option>
                     <option value="completed">Completed</option>
                   </select>
                   <button

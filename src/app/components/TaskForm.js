@@ -52,7 +52,7 @@ const TaskForm = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-10 backdrop-blur-sm overflow-y-auto h-full w-full z-50 flex items-center justify-center">
+    <div className="fixed inset-0 bg-cover bg-center bg-no-repeat bg-opacity-10 backdrop-blur-sm overflow-y-auto h-full w-full z-50 flex items-center justify-center">
       <div className="relative mx-auto p-6 w-96 max-w-md">
         <div className="bg-white/95 backdrop-blur-md rounded-xl shadow-2xl border border-white/20">
           <div className="p-6">

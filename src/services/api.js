@@ -1,9 +1,18 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 
-// Create axios instance
+// Create axios instance for API routes
 const api = axios.create({
+  baseURL: `${API_BASE_URL}/api`,
+  headers: {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json',
+  },
+});
+
+// Create axios instance for web routes (Google OAuth)
+const webApi = axios.create({
   baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
@@ -45,6 +54,9 @@ export const authAPI = {
   logout: () => api.post('/logout'),
   refresh: () => api.post('/refresh'),
   getProfile: () => api.get('/user-profile'),
+  // Google OAuth endpoints (use web routes)
+  googleAuth: () => webApi.get('/auth/google'),
+  googleCallback: (code) => webApi.get(`/auth/google/callback?code=${code}`),
 };
 
 // Tasks API calls

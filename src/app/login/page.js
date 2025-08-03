@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { authAPI } from '../../services/api';
+import GoogleAuth from '../components/GoogleAuth';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -173,6 +174,23 @@ const Login = () => {
               {isLoading ? 'Signing in...' : 'Sign in'}
             </button>
           </form>
+
+          {/* Divider */}
+          <div className="mt-6">
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-gray-300" />
+              </div>
+              <div className="relative flex justify-center text-sm">
+                <span className="px-2 bg-white/90 text-gray-500">Or continue with</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Google Auth Button */}
+          <div className="mt-6">
+            <GoogleAuth />
+          </div>
 
           {/* Sign Up Link */}
           <div className="mt-6 text-center">

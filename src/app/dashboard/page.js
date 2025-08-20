@@ -130,7 +130,7 @@ const Dashboard = () => {
     } finally {
       localStorage.removeItem('auth_token');
       localStorage.removeItem('user');
-      window.location.href = '/Login';
+      window.location.href = '/login';
     }
   };
 
